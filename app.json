@@ -2,10 +2,28 @@
   "expo": {
     "name": "schedule",
     "slug": "schedule",
+    "scheme": "schedule",
     "version": "1.0.0",
+    "owner": "claudiogoncalves",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "expo.ts",
+        "expo.tsx",
+        "expo.js",
+        "expo.jsx",
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "wasm",
+        "svg"
+      ]
+    }
   },
   "name": "schedule"
 }
