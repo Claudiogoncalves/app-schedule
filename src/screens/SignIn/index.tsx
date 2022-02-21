@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { ActivityIndicator, Alert, Platform } from "react-native";
+import { ActivityIndicator, Alert, Platform, Text } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { useTheme } from "styled-components";
 
 import AppleSvg from '../../assets/apple.svg';
 import GoogleSvg from '../../assets/google.svg';
-import LogoSvg from '../../assets/logo.svg'; 
+import LogoSvg from '../../assets/logo_register.svg'; 
+import LoginSvg from '../../assets/login.svg'; 
 
 import { useAuth } from '../../hooks/auth';
 import { SignInSocialButton } from "../../Components/SignInSocialButton";
@@ -19,8 +20,9 @@ import {
   Footer, 
   FooterWrapper
 } from "./styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export function SignIn() {
+export function SignIn({navigation}: any) {
   const [isLoading, setIsLoading] = useState(false);
   const { signInWithGoogle, signInWithApple } = useAuth();
 
@@ -58,8 +60,8 @@ export function SignIn() {
           />
 
           <Title>
-            Controle suas {'\n'} 
-            finanças de forma {'\n'}
+            Agende seu horário {'\n'} 
+            de forma {'\n'}
             muito simples
           </Title>
         </TitleWrapper>
@@ -73,6 +75,11 @@ export function SignIn() {
       <Footer>
         <FooterWrapper>
           <SignInSocialButton 
+            title="Email e senha" 
+            svg={LoginSvg}
+            onPress={() => navigation.navigate('Login')}
+          />
+          <SignInSocialButton 
             title="Entrar com Google" 
             svg={GoogleSvg}
             onPress={handleSignInWithGoogle}
@@ -85,6 +92,9 @@ export function SignIn() {
               onPress={handleSignInWithApple}
             />
           }
+          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+            <Text>Ainda não tem conta? Cadrastre-se</Text>
+          </TouchableOpacity>
         </FooterWrapper>
         { isLoading && 
           <ActivityIndicator 

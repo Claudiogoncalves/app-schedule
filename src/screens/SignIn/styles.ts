@@ -7,7 +7,7 @@ export const Container = styled.View`
 
 export const Header = styled.View`
   width: 100%;
-  height: 70%;
+  height: 65%;
 
   background-color: ${({ theme }) => theme.colors.primary};
   justify-content: flex-end;
@@ -24,7 +24,7 @@ export const Title = styled.Text`
   font-size: ${RFValue(30)}px;
 
   text-align: center;
-  margin-top: 45px;
+  margin-top: 65px;
 `;
 
 export const SignInTitle = styled.Text`
@@ -33,13 +33,13 @@ export const SignInTitle = styled.Text`
   font-size: ${RFValue(16)}px;
 
   text-align: center;
-  margin-top: 80px;
+  margin-top: 70px;
   margin-bottom: 67px;
 `; 
 
 export const Footer = styled.View`
   width: 100%;
-  height: 30%;
+  height: 35%;
 
   background-color: ${({ theme }) => theme.colors.secondary};
 `; 
